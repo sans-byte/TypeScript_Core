@@ -20,10 +20,9 @@ enum UserRoles {
 let a: number = 12; // we have defined type explicitly
 
 let b: any = "string"; // any types basically lets a varaible to
+b.toUpperCase(); // here this will not give any error because any is like typescript off but in the case of unknown we will get error
 b = 12; //have any data type which is not good
 b = true;
-
-b.toUpperCase(); // here this will not give any error because any is like typescript off but in the case of unknown we will get error
 
 //unknown
 let x: unknown;
@@ -106,3 +105,44 @@ type type2 = type1 & string; // so type2 will contain only string
 let k: type2;
 
 // Classes and Objects
+class Device {
+  name: string;
+  price: number;
+  category: string;
+  constructor(
+    name: string,
+    price: number,
+    category: string,
+    year: number = 2025 //default value
+  ) {
+    this.name = name;
+    this.price = price;
+    this.category = category;
+  }
+}
+let d1 = new Device("lg", 1200, "digital");
+
+// one more way of making a constructor
+class Bird {
+  constructor(
+    public name: string,
+    public canSpeak: boolean,
+    public canFly: boolean
+  ) {}
+}
+
+let b1 = new Bird("Kiwi", true, false);
+console.log(b1);
+
+class Phone {
+  constructor(
+    public phoneNumber: number,
+    public brand: string,
+    public price: number = 12000
+  ) {}
+}
+
+let p1 = new Phone(123, "Samsung");
+
+// Access Modifiers
+
