@@ -145,4 +145,15 @@ class Phone {
 let p1 = new Phone(123, "Samsung");
 
 // Access Modifiers
+class School {
+  constructor(
+    private name: string,
+    private age: number,
+    public numberOfKids: number
+  ) {}
+}
+
+let s1 = new School("Vandana", 21, 2000);
+//s1.name = "Christ"; // cannot access coz its private
+// it will change the value but TS will give an error
 
