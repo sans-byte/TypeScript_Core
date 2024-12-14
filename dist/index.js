@@ -28,3 +28,19 @@ x = 12;
 if (typeof x == "string") {
     x.toUpperCase();
 }
+// void
+function sayHello() {
+    console.log("hello world");
+}
+function sayTrue() {
+    return true;
+}
+// null
+let i = null;
+// i = 12; // this will give error as the type is null
+let j = null;
+j = 12; //this wont give error because we did not explicitly define the type to null to TS takes data type as any
+//undefined
+let m = undefined;
+// never
+// something which will never return anything
