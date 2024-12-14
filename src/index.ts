@@ -148,8 +148,9 @@ let p1 = new Phone(123, "Samsung");
 class School {
   constructor(
     private name: string,
-    private age: number,
-    public numberOfKids: number
+    public age: number,
+    public numberOfKids: number,
+    protected fee?: number
   ) {}
 }
 
@@ -157,3 +158,17 @@ let s1 = new School("Vandana", 21, 2000);
 //s1.name = "Christ"; // cannot access coz its private
 // it will change the value but TS will give an error
 
+class College extends School {
+  constructor(name: string, age: number, numberOfKids: number, fee?: number) {
+    super(name, age, numberOfKids, fee); // this will basically call the constructor of parent class
+  }
+  getValue(): void {
+    //console.log(this.name); // gives error as the name is private
+    console.log(this.age);
+    console.log(this.numberOfKids);
+    console.log(this.fee);
+  }
+}
+
+let c1 = new College("Sharda", 12, 2000, 2000000);
+c1.getValue();
