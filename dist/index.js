@@ -151,9 +151,21 @@ class IronMan extends Hero {
 }
 let tony = new IronMan("tony", "fly shoot", true, true);
 console.log(tony);
+// functions in ts
 function someFtn(name, age, cb) {
     cb("Hello world");
 }
 someFtn("sanskar", 25, function (value) {
     console.log(value);
 });
+// function optional and default parameters
+function person(name, age, language = "English", gender) {
+    console.log("name : " + name + " age : " + age + " language : " + language);
+}
+person("Toota", 24, "hindi");
+// = > We cannot use ? and initialize a parameter at the same time
+// Rest parameters in functions
+function restFunction(...args) {
+    console.log(args);
+}
+restFunction("Hello", " World", 12, 15);

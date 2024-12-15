@@ -220,6 +220,7 @@ class IronMan extends Hero {
 let tony = new IronMan("tony", "fly shoot", true, true);
 console.log(tony);
 
+// functions in ts
 function someFtn(name: string, age: number, cb: (value: string) => void) {
   cb("Hello world");
 }
@@ -227,3 +228,24 @@ function someFtn(name: string, age: number, cb: (value: string) => void) {
 someFtn("sanskar", 25, function (value) {
   console.log(value);
 });
+
+// function optional and default parameters
+
+function person(
+  name: string,
+  age: number,
+  language: string = "English",
+  gender?: string
+) {
+  console.log("name : " + name + " age : " + age + " language : " + language);
+}
+
+person("Toota", 24, "hindi");
+// = > We cannot use ? and initialize a parameter at the same time
+
+// Rest parameters in functions
+function restFunction(...args: (string | number)[]) {
+  console.log(args);
+}
+
+restFunction("Hello", " World", 12, 15);
