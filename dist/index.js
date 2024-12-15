@@ -151,3 +151,9 @@ class IronMan extends Hero {
 }
 let tony = new IronMan("tony", "fly shoot", true, true);
 console.log(tony);
+function someFtn(name, age, cb) {
+    cb("Hello world");
+}
+someFtn("sanskar", 25, function (value) {
+    console.log(value);
+});

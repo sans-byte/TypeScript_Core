@@ -205,7 +205,6 @@ abstract class Hero {
 // abstract class is made to be implemeted or extended from the
 // other class
 
-
 class IronMan extends Hero {
   constructor(
     heroName: string,
@@ -220,3 +219,11 @@ class IronMan extends Hero {
 
 let tony = new IronMan("tony", "fly shoot", true, true);
 console.log(tony);
+
+function someFtn(name: string, age: number, cb: (value: string) => void) {
+  cb("Hello world");
+}
+
+someFtn("sanskar", 25, function (value) {
+  console.log(value);
+});
