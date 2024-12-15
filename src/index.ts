@@ -155,7 +155,6 @@ let s1 = new School("Vandana", 21, 2000);
 //s1.name = "Christ"; // cannot access coz its private
 // it will change the value but TS will give an error
 
-
 //classes and objects optional properties
 class College extends School {
   constructor(name: string, age: number, numberOfKids: number, fee?: number) {
@@ -184,11 +183,40 @@ class User {
 const u1 = new User("Sanskar");
 u1.changeName();
 
-
 // getters and setters -> we already know about them
 
 // static keyword -> we already know this too
 
 // abstract classes
 
+abstract class Hero {
+  constructor(
+    protected heroName: string,
+    protected superPower: string,
+    protected selfMade: boolean
+  ) {}
 
+  isSelfMade(): boolean {
+    if (this.selfMade) return true;
+    return false;
+  }
+}
+// YOu cannot instansiate instance of an abstract class
+// abstract class is made to be implemeted or extended from the
+// other class
+
+
+class IronMan extends Hero {
+  constructor(
+    heroName: string,
+    superPower: string,
+    selfMade: boolean,
+    public isMarvel: boolean
+  ) {
+    super(heroName, superPower, selfMade);
+    this.isMarvel = isMarvel;
+  }
+}
+
+let tony = new IronMan("tony", "fly shoot", true, true);
+console.log(tony);

@@ -127,3 +127,27 @@ u1.changeName();
 // getters and setters -> we already know about them
 // static keyword -> we already know this too
 // abstract classes
+class Hero {
+    constructor(heroName, superPower, selfMade) {
+        this.heroName = heroName;
+        this.superPower = superPower;
+        this.selfMade = selfMade;
+    }
+    isSelfMade() {
+        if (this.selfMade)
+            return true;
+        return false;
+    }
+}
+// YOu cannot instansiate instance of an abstract class
+// abstract class is made to be implemeted or extended from the
+// other class
+class IronMan extends Hero {
+    constructor(heroName, superPower, selfMade, isMarvel) {
+        super(heroName, superPower, selfMade);
+        this.isMarvel = isMarvel;
+        this.isMarvel = isMarvel;
+    }
+}
+let tony = new IronMan("tony", "fly shoot", true, true);
+console.log(tony);
