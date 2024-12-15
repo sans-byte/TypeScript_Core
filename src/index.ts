@@ -106,13 +106,10 @@ let k: type2;
 
 // Classes and Objects
 class Device {
-  name: string;
-  price: number;
-  category: string;
   constructor(
-    name: string,
-    price: number,
-    category: string,
+    public name: string,
+    public price: number, //this is callled classes and objects parameters and properties (declare direct in constructor)
+    public category: string,
     year: number = 2025 //default value
   ) {
     this.name = name;
@@ -172,3 +169,15 @@ class College extends School {
 
 let c1 = new College("Sharda", 12, 2000, 2000000);
 c1.getValue();
+
+//classes and objects optional properties
+
+class User {
+  constructor(public readonly profile: string) {}
+  changeName() {
+    this.profile = "hello"; // Error as it is readonly
+  }
+}
+
+const u1 = new User("Sanskar");
+u1.changeName();
