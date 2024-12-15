@@ -249,3 +249,17 @@ function restFunction(...args: (string | number)[]) {
 }
 
 restFunction("Hello", " World", 12, 15);
+
+// function overloading
+
+//function signatures
+function bark(animal: string): void;
+function bark(animal: string, times: number): number;
+
+function bark(animal: string, times?: number) {
+  if (times) {
+    return times;
+  } else {
+    console.log(animal);
+  }
+}

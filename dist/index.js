@@ -169,3 +169,11 @@ function restFunction(...args) {
     console.log(args);
 }
 restFunction("Hello", " World", 12, 15);
+function bark(animal, times) {
+    if (times) {
+        return times;
+    }
+    else {
+        console.log(animal);
+    }
+}
