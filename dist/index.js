@@ -210,3 +210,13 @@ function someFunction(a, b) {
 }
 someFunction("hello", "world");
 someFunction(1, 2);
+// Type assertion and type casting
+// type assertion
+let c;
+c;
+c;
+// type casting
+let n = Number("12");
+let v = String(12);
+console.log(n);
+console.log(v);

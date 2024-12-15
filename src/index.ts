@@ -316,4 +316,15 @@ function someFunction<T>(a: T, b: T): T {
 someFunction<string>("hello", "world");
 someFunction<number>(1, 2);
 
+// Type assertion and type casting
 
+// type assertion
+let c: any;
+c as string;
+<number>c;
+
+// type casting
+let n = Number("12");
+let v = String(12);
+console.log(n);
+console.log(v);
