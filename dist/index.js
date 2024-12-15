@@ -220,3 +220,43 @@ let n = Number("12");
 let v = String(12);
 console.log(n);
 console.log(v);
+//type guards or type narrowing and ts utility types
+function study(args) {
+    if (typeof args === "number") {
+        return args.toFixed();
+    }
+    else if (typeof args === "string") {
+        return args.toUpperCase();
+    }
+    else {
+        throw new Error("Not a string or a number");
+    }
+}
+console.log(study(12));
+console.log(study("Hello"));
+// console.log(study(true)); // will give error
+//using types and instanceof
+class Car {
+    buyACar() {
+        console.log("You bought a car");
+    }
+}
+class Bike {
+    buyABike() {
+        console.log("You bought a bike");
+    }
+}
+function whatToBuy(budget, vehicle) {
+    if (budget > 400000) {
+        if (vehicle instanceof Car) {
+            vehicle.buyACar();
+        }
+    }
+    else {
+        if (vehicle instanceof Bike) {
+            vehicle.buyABike();
+        }
+    }
+}
+whatToBuy(800000, new Car());
+//partial, required, readonly
