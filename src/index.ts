@@ -176,7 +176,7 @@ c1.getValue();
 class User {
   constructor(public readonly profile: string) {}
   changeName() {
-    this.profile = "hello"; // Error as it is readonly
+    // this.profile = "hello"; // Error as it is readonly
   }
 }
 
@@ -263,3 +263,57 @@ function bark(animal: string, times?: number) {
     console.log(animal);
   }
 }
+
+// Generics
+function genie<T>(a: T) {
+  console.log(a);
+}
+
+genie<string>("Hello");
+genie<number>(10);
+
+genie("Hello");
+genie(10);
+
+// Generic interfaces
+
+interface GenieInterface<T> {
+  name: string;
+  age: number;
+  key: T;
+}
+
+function otherGenie(obj: GenieInterface<string>) {}
+
+//generics Classes
+
+class BottleMaker<T> {
+  constructor(public key: T) {}
+}
+
+let b2 = new BottleMaker(123);
+let b3 = new BottleMaker("Hello");
+let b4 = new BottleMaker<number>(32);
+
+// => note
+
+function someFunction<T>(a: T, b: T): T {
+  return a;
+
+  // Note => if you are giving return type as a generic that is T
+  // You have to return T type vaiable only you cannot return string or number or anything
+  // even if T is string or number respectively
+
+  // so we can not do something like this
+  // return "hello"
+
+  // but we can use type conversion and do something like this
+  return "hey" as T;
+  // or
+  return <T>"hello";
+}
+
+someFunction<string>("hello", "world");
+someFunction<number>(1, 2);
+
+

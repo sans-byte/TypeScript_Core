@@ -119,7 +119,7 @@ class User {
         this.profile = profile;
     }
     changeName() {
-        this.profile = "hello"; // Error as it is readonly
+        // this.profile = "hello"; // Error as it is readonly
     }
 }
 const u1 = new User("Sanskar");
@@ -177,3 +177,36 @@ function bark(animal, times) {
         console.log(animal);
     }
 }
+// Generics
+function genie(a) {
+    console.log(a);
+}
+genie("Hello");
+genie(10);
+genie("Hello");
+genie(10);
+function otherGenie(obj) { }
+//generics Classes
+class BottleMaker {
+    constructor(key) {
+        this.key = key;
+    }
+}
+let b2 = new BottleMaker(123);
+let b3 = new BottleMaker("Hello");
+let b4 = new BottleMaker(32);
+// => note
+function someFunction(a, b) {
+    return a;
+    // Note => if you are giving return type as a generic that is T
+    // You have to return T type vaiable only you cannot return string or number or anything
+    // even if T is string or number respectively
+    // so we can not do something like this
+    // return "hello"
+    // but we can use type conversion and do something like this
+    return "hey";
+    // or
+    return "hello";
+}
+someFunction("hello", "world");
+someFunction(1, 2);
