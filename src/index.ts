@@ -155,6 +155,8 @@ let s1 = new School("Vandana", 21, 2000);
 //s1.name = "Christ"; // cannot access coz its private
 // it will change the value but TS will give an error
 
+
+//classes and objects optional properties
 class College extends School {
   constructor(name: string, age: number, numberOfKids: number, fee?: number) {
     super(name, age, numberOfKids, fee); // this will basically call the constructor of parent class
@@ -170,7 +172,7 @@ class College extends School {
 let c1 = new College("Sharda", 12, 2000, 2000000);
 c1.getValue();
 
-//classes and objects optional properties
+//readonly
 
 class User {
   constructor(public readonly profile: string) {}
@@ -181,3 +183,12 @@ class User {
 
 const u1 = new User("Sanskar");
 u1.changeName();
+
+
+// getters and setters -> we already know about them
+
+// static keyword -> we already know this too
+
+// abstract classes
+
+
